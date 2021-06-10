@@ -1,0 +1,3 @@
+[submodule "tcpdf"]
+	path = tcpdf
+	url = https://github.com/tecnickcom/tcpdf
