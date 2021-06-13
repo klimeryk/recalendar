@@ -1,0 +1,58 @@
+<?php
+declare(strict_types=1);
+
+require_once __DIR__ . '/config.php';
+require_once __DIR__ . '/local.config.php';
+
+if ( class_exists( '\ReCalendar\LocalConfig' ) ) {
+	$config = new \Recalendar\LocalConfig();
+} else {
+	$config = new \Recalendar\Config();
+}
+
+setlocale( LC_TIME, $config->get( \ReCalendar\Config::LOCALE ) );
+
+require_once __DIR__ . '/recalendar.php';
+
+function l( $stuff ) : void {
+	if ( is_string( $stuff ) ) {
+		echo $stuff . "\n";
+	} else {
+		var_export( $stuff );
+		echo "\n";
+	}
+}
+
+$defaultConfig = ( new \Mpdf\Config\ConfigVariables() )->getDefaults();
+$fontDirs = $defaultConfig['fontDir'];
+
+$defaultFontConfig = ( new \Mpdf\Config\FontVariables() )->getDefaults();
+$fontData = $defaultFontConfig['fontdata'];
+
+$mpdf = new \Mpdf\Mpdf( [
+    'fontDir' => array_merge( $fontDirs, [
+        __DIR__ . '/fonts/Lato',
+    ] ),
+    'fontdata' => $fontData + [
+        'lato' => [
+            'R' => 'Lato-Regular.ttf',
+            'I' => 'Lato-Italic.ttf',
+            'B' => 'Lato-Bold.ttf',
+            'BI' => 'Lato-BoldItalic.ttf',
+        ],
+    ],
+	'mode' => 'utf-8',
+	'format' => $config->get( \ReCalendar\Config::FORMAT ),
+	'default_font' => 'lato',
+	'margin_left' => 0,
+	'margin_right' => 0,
+	'margin_top' => 0,
+	'margin_bottom' => 0,
+	'margin_header' => 0,
+	'margin_footer' => 0,
+] );
+$mpdf->useSubstitutions = false;
+
+$recalendar = new \ReCalendar\ReCalendar( $mpdf, $config );
+
+$recalendar->generate();
