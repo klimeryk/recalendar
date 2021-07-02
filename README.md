@@ -140,6 +140,8 @@ class LocalConfig extends Config {
       self::SPECIAL_DATES => [
         '14-03' => [ 'Pi Day' ],
         '25-12' => [ 'Christmas' ],
+	// Note that you can, of course, have more than one item per day:
+	'04-05' => [ 'Star Wars Day', "Will Arnett's birthday" ],
       ],
       self::WEEKLY_RETROSPECTIVE_BOOKMARK => 'Podsumowanie',
       self::WEEKLY_RETROSPECTIVE_TITLE => 'Podsumowanie tygodnia',
