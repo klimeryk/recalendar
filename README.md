@@ -65,3 +65,7 @@ See the [`config.php`](https://github.com/klimeryk/recalendar/blob/main/config.p
 Just run `php generate.php` any time you need to regenerate the calendar after config changes. If you want to update the `recalendar` source code, either use `git pull` or download the newest ZIP archive and override all the files (make sure you're using the `local.config.php` approach, as described above).
 
 **NOTE**: The update process is mostly for when you're tweaking your configuration and/or generating a calendar for the next year. Due to how ReMarkble tablet works, you can't easily "migrate" your notes from your previous version of the calendar/file to the new one. To the tablet, it's a new, "empty" file. You can select and copy notes from each page individually and move them over, but that's very cumbersome.
+
+## License
+
+[GPL-3.0 License](https://github.com/klimeryk/recalendar/blob/main/LICENSE). In particular, this means that you can do what you want with this code, but *you have to publish your changes with the same license*. Please consider submitting a PR, if you have an idea for a great improvement! 🙏 My main motivation was to scratch my own itch, but as a result I might have missed your use case so I'm happy to hear how this generator can be improved 🙇
