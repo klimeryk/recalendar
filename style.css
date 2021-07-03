@@ -192,7 +192,6 @@ td.calendar__week-number {
 }
 
 .day-entry__special-items {
-	border-bottom: 1px solid black;
 	vertical-align: bottom;
 	font-style: italic;
 	font-size: 10pt;
@@ -200,6 +199,10 @@ td.calendar__week-number {
 }
 
 .day-entry__special-item {
+}
+
+.day-entry__day-of-week {
+	vertical-align: bottom;
 }
 
 .day-entry__previous-day,

@@ -32,22 +32,32 @@ class DayEntryGenerator extends Generator {
 ?>
 		<table width="100%">
 			<tr>
-				<td rowspan="2" class="day-entry__special-items">
-<?php
-					foreach ( $special_items as $special_item ) {
-						echo "<br /><span class=\"day-entry__special-item\">» $special_item</span>";
-					}
-?>
-				</td>
 				<td class="day-entry__month-name"><a href="#<?php echo $month_overview_anchor; ?>"><?php echo $month_name; ?></a></td>
 				<td class="day-entry__previous-day"><a href="#<?php echo $previous_day_anchor; ?>">«</a></td>
 				<td class="day-entry__day-number"><?php echo $day_number; ?></td>
 				<td class="day-entry__next-day"><a href="#<?php echo $next_day_anchor; ?>">»</a></td>
-				</td>
 				<td rowspan="2" class="calendar-box"><?php echo $calendar_html ?></td>
 			</tr>
 			<tr>
-				<td colspan="4" style="border-bottom: 1px solid black;" class="header-line day-entry__day-of-week"><?php echo strftime( '%A', $this->day->getTimestamp() ); ?></td>
+				<td colspan="4" style="border-bottom: 1px solid black; padding: 0; margin: 0;">
+					<table width="100%">
+						<tbody>
+							<tr>
+								<td class="day-entry__special-items">
+<?php
+									foreach ( $special_items as $index => $special_item ) {
+										echo "<span class=\"day-entry__special-item\">» $special_item</span>";
+										if ( $index < ( count( $special_items ) - 1 ) ) {
+											echo '<br />';
+										}
+									}
+?>
+								</td>
+								<td class="header-line day-entry__day-of-week"><?php echo strftime( '%A', $this->day->getTimestamp() ); ?></td>
+							</tr>
+						</tbody>
+					</table>
+				</td>
 			</tr>
 		</table>
 <?php
