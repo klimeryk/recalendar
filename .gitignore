@@ -1,4 +1,4 @@
 .DS_Store
-*.pdf
+/*.pdf
 /vendor
-local.config.php
+/local.config.php
