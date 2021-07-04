@@ -12,6 +12,7 @@ https://user-images.githubusercontent.com/3392497/124393405-e86ed380-dce9-11eb-9
 ## Features
 
  - Optimized for the [ReMarkable 2 tablet](https://remarkable.com/store/remarkable-2) (should work with version 1 as well) to use the full space available and minimize screen refreshes.
+ - No hacks needed - the generated PDF is a normal file, with links, etc. that you can simply upload normally to your tablet.
  - Heavy use of links to allow quick and easy navigation.
  - Lots of easy configuration options to tailor the calendar to your needs - plus access to the source code for even more advanced customization.
  - Easily switch to any locale supported by PHP.
@@ -164,6 +165,21 @@ class LocalConfig extends Config {
 Just run `php generate.php` any time you need to regenerate the calendar after config changes. If you want to update the `recalendar` source code, either use `git pull` or download the newest ZIP archive and override all the files (make sure you're using the `local.config.php` approach, as described above).
 
 **NOTE**: The update process is mostly for when you're tweaking your configuration and/or generating a calendar for the next year. Due to how ReMarkble tablet works, you can't easily "migrate" your notes from your previous version of the calendar/file to the new one. To the tablet, it's a new, "empty" file. You can select and copy notes from each page individually and move them over, but that's very cumbersome.
+
+## Known issues
+
+### Links are hard to trigger
+
+Unfortunately, due to the [limitations of mPDF](https://mpdf.github.io/css-stylesheets/supported-css.html), lots of layouting was done using tables (hello webdevelopment in 2000s ;)). As a result, the links usually only take up as much space as their text. So it's easier to target `11` than `1`, because it's "bigger". I've tried different approaches, but it boils down to no block items in tables in mPDF and it's not something I can overcome. I'd have to switch to a different library, but that's something I realized too late in the process.
+In practice, I did not find it that disruptive, but, of course, YMMV.
+
+### It's slow to generate
+
+It takes around 15-20 seconds to generate the full file on my laptop - YMMV. I've tried optimizing the script, but the profiling data clearly showed the [bottleneck is in the mPDF library](https://mpdf.github.io/troubleshooting/slow.html). So there was not much I could do (except for trying some configuration options that had marginal impact). In the end, it's not bad since you will only "feel" this when trying out different configuration options. The PDF itself, of course, works like any other PDF files.
+
+### It does not cover the full page on my XYZ tablet/device
+
+I only have ReMarkable 2 to test with and I wanted to take up all the available space on the screen for it. So it's been optimized for RM2's screen size. Try adjusting the [`format` configuration option](https://github.com/klimeryk/recalendar/blob/cbd2d84507eae773cd21b03448ca170b6ee5690a/config.php#L61-L64) and editing the CSS styles.
 
 ## License
 
