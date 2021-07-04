@@ -2,7 +2,7 @@ The file used below can be found in the [`example`](https://github.com/klimeryk/
 
 # Video
 
-https://youtu.be/tz32lR51rqw
+https://youtu.be/Ys2fNQu0v0o
 
 # Screenshots
 
