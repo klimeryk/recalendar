@@ -3,7 +3,14 @@
 
 ReCalendar allows you to generate your own, personalized calendar using PHP and the [mPDF library](https://mpdf.github.io/).
 
-Features:
+## How does it look?
+
+See it in action: https://youtu.be/tz32lR51rqw and check more [screenshots](SCREENSHOTS.md). Example [generated PDF](https://github.com/klimeryk/recalendar/raw/main/example/ReCalendar.pdf) version and the [`local.config.php`](https://github.com/klimeryk/recalendar/blob/main/example/local.config.php) that generated it.
+
+https://user-images.githubusercontent.com/3392497/124393405-e86ed380-dce9-11eb-93d4-6c19a7770a36.mp4
+
+## Features
+
  - Optimized for the [ReMarkable 2 tablet](https://remarkable.com/store/remarkable-2) (should work with version 1 as well) to use the full space available and minimize screen refreshes.
  - Heavy use of links to allow quick and easy navigation.
  - Lots of easy configuration options to tailor the calendar to your needs - plus access to the source code for even more advanced customization.
@@ -59,6 +66,8 @@ class LocalConfig extends Config {
 ```
 
 See the [`config.php`](https://github.com/klimeryk/recalendar/blob/main/config.php) file for the full list of available options and their descriptions. You can modify the options there as well, but it's recommended to use the `local.config.php` instead as then you can easily update the source code in the future and retain your configuration changes.
+
+There's also an [example generated PDF](https://github.com/klimeryk/recalendar/raw/main/example/ReCalendar.pdf) you can check out quickly and the [`local.config.php`](https://github.com/klimeryk/recalendar/blob/main/example/local.config.php) that generated it as an inspiration.
 
 ## Advanced configuration example
 
