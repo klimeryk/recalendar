@@ -5,7 +5,7 @@ ReCalendar allows you to generate your own, personalized calendar using PHP and 
 
 ## How does it look?
 
-See it in action: https://youtu.be/tz32lR51rqw and check more [screenshots](SCREENSHOTS.md). Example [generated PDF](https://github.com/klimeryk/recalendar/raw/main/example/ReCalendar.pdf) version and the [`local.config.php`](https://github.com/klimeryk/recalendar/blob/main/example/local.config.php) that generated it.
+See it in action: https://youtu.be/Ys2fNQu0v0o and check more [screenshots](SCREENSHOTS.md). Example [generated PDF](https://github.com/klimeryk/recalendar/raw/main/example/ReCalendar.pdf) version and the [`local.config.php`](https://github.com/klimeryk/recalendar/blob/main/example/local.config.php) that generated it.
 
 https://user-images.githubusercontent.com/3392497/124393405-e86ed380-dce9-11eb-93d4-6c19a7770a36.mp4
 
