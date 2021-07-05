@@ -2,7 +2,9 @@
 declare(strict_types=1);
 
 require_once __DIR__ . '/config.php';
-require_once __DIR__ . '/local.config.php';
+if ( file_exists( __DIR__ . '/local.config.php' ) ) {
+	require_once __DIR__ . '/local.config.php';
+}
 
 if ( class_exists( '\ReCalendar\LocalConfig' ) ) {
 	$config = new \Recalendar\LocalConfig();
