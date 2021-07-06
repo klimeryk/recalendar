@@ -9,6 +9,10 @@ See it in action: https://youtu.be/Ys2fNQu0v0o and check more [screenshots](SCRE
 
 https://user-images.githubusercontent.com/3392497/124393405-e86ed380-dce9-11eb-93d4-6c19a7770a36.mp4
 
+## Blank version
+
+Don't want to/need to/can customize it? Check out the [ready-to-use blank version](https://github.com/klimeryk/recalendar/raw/main/blank/ReCalendar.pdf) - it still benefits from the quick navigation through links, layout optimized for RM, etc. - just misses your personal touch :)
+
 ## Features
 
  - Optimized for the [ReMarkable 2 tablet](https://remarkable.com/store/remarkable-2) (should work with version 1 as well) to use the full space available and minimize screen refreshes.
