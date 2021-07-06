@@ -11,6 +11,7 @@ class Config {
 	public const FORMAT = 'format';
 	public const HABITS = 'habits';
 	public const LOCALE = 'locale';
+	public const MONTH = 'month';
 	public const MONTHS = 'months';
 	public const WEEK_NAME = 'week_name';
 	public const WEEK_NUMBER = 'week_number';
@@ -67,6 +68,11 @@ class Config {
 			// `locale -a` in your terminal (at least on Linux and MacOS)
 			// Note that you will still need to override some configuration variables, like `WEEK_NAME`, etc.
 			self::LOCALE => 'en_US.UTF-8',
+			// The month from which to start the "year"
+			// Useful if you want to track your college year, for example.
+			// You could then set this to 10 (October) and the calendar
+			// would then be generated for 12 months starting from October.
+			self::MONTH => 1,
 			// Title of the Week overview page
 			self::WEEK_NAME => 'Week',
 			// A short version of "Week Number" used in the header of the small calendar in upper right corner of the page

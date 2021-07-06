@@ -29,10 +29,11 @@ class ReCalendar {
 		$this->mpdf->WriteHTML( $stylesheet, \Mpdf\HTMLParserMode::HEADER_CSS );
 		$this->generate_title_page();
 
+		$month = sprintf( '%02d', (int) $this->config->get( Config::MONTH ) );
 		$year = (int) $this->config->get( Config::YEAR );
-		$start = new \DateTimeImmutable( $year . '-01-01' );
+		$start = new \DateTimeImmutable( "$year-$month-01" );
 		$next_year = $year + 1;
-		$end = new \DateTimeImmutable( $next_year . '-01-01' );
+		$end = new \DateTimeImmutable( "$next_year-$month-01" );
 		$year_overview_generator = new YearOverviewGenerator( $start, $end, $this->config );
 		$this->add_page();
 		$this->append_html( $year_overview_generator->generate() );
