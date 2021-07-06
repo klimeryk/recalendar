@@ -10,6 +10,7 @@ class Config {
 	public const DAY_ITINERARY_MONTH_OVERVIEW = 'day_itinerary_month_overview';
 	public const FORMAT = 'format';
 	public const HABITS = 'habits';
+	public const HABITS_TITLE = 'habits_title';
 	public const LOCALE = 'locale';
 	public const MONTH = 'month';
 	public const MONTHS = 'months';
@@ -59,6 +60,8 @@ class Config {
 			// to help tracking those habits
 			self::HABITS => [
 			],
+			// Title for the habits table on month overview
+			self::HABITS_TITLE => 'Habits',
 			// This is the exact size (in mm) of the ReMarkable 2 screen
 			// You might want to adjust it to your device's size
 			// See https://mpdf.github.io/reference/mpdf-functions/construct.html for possible values

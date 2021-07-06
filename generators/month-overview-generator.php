@@ -44,11 +44,12 @@ class MonthOverviewGenerator extends Generator {
 	}
 
 	private function generate_habits_table( array $habits ) : void {
+		$habits_title = $this->config->get( Config::HABITS_TITLE );
 ?>
 		<table class="content-box">
 			<thead>
 				<tr>
-					<th></th>
+					<th rowspan="2"><?php echo $habits_title; ?></th>
 <?php
 					$end_of_month = $this->month->modify( 'first day of next month' );
 					$month_period = new \DatePeriod( $this->month, new \DateInterval( 'P1D' ), $end_of_month );
@@ -63,7 +64,7 @@ class MonthOverviewGenerator extends Generator {
 						echo '<th class="month-overview__habit-header disabled">&nbsp;</th>';
 					}
 
-					echo '</tr><tr><th></th>';
+					echo '</tr><tr>';
 
 					$i = 1;
 					foreach ( $month_period as $day ) {

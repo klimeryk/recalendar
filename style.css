@@ -177,6 +177,8 @@ td.calendar__week-number {
 	border-top: 1px solid #999;
 	border-bottom: 1px solid #999;
 	font-weight: bold;
+	width: 100px;
+	height: 20px;
 }
 
 .month-overview__habit-box {
