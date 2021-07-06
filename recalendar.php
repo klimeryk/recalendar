@@ -8,6 +8,7 @@ require_once __DIR__ . '/generators/calendar-generator.php';
 require_once __DIR__ . '/generators/day-entry-generator.php';
 require_once __DIR__ . '/generators/month-overview-generator.php';
 require_once __DIR__ . '/generators/title-page-generator.php';
+require_once __DIR__ . '/generators/year-overview-generator.php';
 require_once __DIR__ . '/generators/week-overview-generator.php';
 require_once __DIR__ . '/generators/week-retrospective-generator.php';
 
@@ -30,10 +31,14 @@ class ReCalendar {
 
 		$year = (int) $this->config->get( Config::YEAR );
 		$start = new \DateTimeImmutable( $year . '-01-01' );
-		$start = $start->modify( 'monday this week' );
-		$interval = new \DateInterval( 'P1W' );
 		$next_year = $year + 1;
 		$end = new \DateTimeImmutable( $next_year . '-01-01' );
+		$year_overview_generator = new YearOverviewGenerator( $start, $end, $this->config );
+		$this->add_page();
+		$this->append_html( $year_overview_generator->generate() );
+
+		$start = $start->modify( 'monday this week' );
+		$interval = new \DateInterval( 'P1W' );
 		$period = new \DatePeriod( $start, $interval, $end );
 
 		foreach( $period as $week ) {

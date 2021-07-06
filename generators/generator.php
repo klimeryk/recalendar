@@ -57,6 +57,10 @@ abstract class Generator {
 		return self::get_week_number( $date ) . '-week-retrospective';
 	}
 
+	protected static function get_year_overview_anchor() : string {
+		return 'year-overview';
+	}
+
 	protected static function get_week_number( \DateTimeImmutable $week ) : int {
 		return (int) $week->modify( 'thursday this week' )->format( 'W' );
 	}

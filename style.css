@@ -109,6 +109,12 @@ td.calendar__week-number {
 	font-weight: bold;
 }
 
+.calendar__full-month-name {
+	color: black;
+	letter-spacing: 1px;
+	font-size: 12pt;
+}
+
 .header-line {
 	text-align: right;
 	text-transform: uppercase;
@@ -117,6 +123,25 @@ td.calendar__week-number {
 }
 
 .header-type {
+}
+
+.year-overview__title {
+	text-align: center;
+	font-size: 60pt;
+	padding-top: 30px;
+	margin-bottom: 20px;
+}
+
+.year-overview__calendars {
+	width: 100%;
+}
+
+.year-overview__row {
+}
+
+.year-overview__calendar {
+	vertical-align: top;
+	padding: 5px;
 }
 
 .month-overview__month-name {

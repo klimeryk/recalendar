@@ -13,12 +13,14 @@ class CalendarGenerator extends Generator {
 	private $month;
 	private $date;
 	private $config;
+	private $display_full_month_name;
 
-	public function __construct( \DateTimeImmutable $date, string $highlight_mode, Config $config ) {
+	public function __construct( \DateTimeImmutable $date, string $highlight_mode, Config $config, bool $display_full_month_name = false ) {
 		$this->month = $date->modify( 'first day of this month' );
 		$this->date = $date;
 		$this->highlight_mode = $highlight_mode;
 		$this->config = $config;
+		$this->display_full_month_name = $display_full_month_name;
 	}
 
 	protected function generate_anchor_string() : ?string {
@@ -26,17 +28,13 @@ class CalendarGenerator extends Generator {
 	}
 
 	protected function generate_content() : void {
-		$month_overview_anchor = self::get_month_overview_anchor( $this->month );
-		$previous_month_overview_anchor = self::get_month_overview_anchor( $this->month->modify( 'previous month' ) );
-		$next_month_overview_anchor = self::get_month_overview_anchor( $this->month->modify( 'next month' ) );
 ?>
 		<table class="ui-datepicker-calendar">
 			<thead>
 				<tr>
 					<th scope="col" colspan="9" class="ui-datepicker-header">
-					<a href="#<?php echo $previous_month_overview_anchor; ?>" class="calendar__previous-month">&nbsp;&lt;&nbsp;</a>
-					<a href="#<?php echo $month_overview_anchor; ?>"><?php echo strftime( '%b %Y', $this->month->getTimestamp() ); ?></a>
-					<a href="#<?php echo $next_month_overview_anchor; ?>" class="calendar__next-month">&nbsp;&gt;&nbsp;</a></th>
+						<?php $this->generate_header(); ?>
+					</th>
 				</tr>
 				<tr>
 					<th scope="col" class="calendar__week-number"><span><?php echo $this->config->get( Config::WEEK_NUMBER ); ?></span></th>
@@ -105,6 +103,25 @@ class CalendarGenerator extends Generator {
 ?>
 			</tbody>
 		</table>
+<?php
+	}
+
+	private function generate_header() : void {
+		$month_overview_anchor = self::get_month_overview_anchor( $this->month );
+		if ( $this->display_full_month_name ) {
+			$month_name = self::get_localized_month_name( $this->month, $this->config->get( Config::MONTHS ) );
+			echo "<a class=\"calendar__full-month-name\" href=\"#$month_overview_anchor\">$month_name</a>";
+			return;
+		}
+
+		$previous_month_overview_anchor = self::get_month_overview_anchor( $this->month->modify( 'previous month' ) );
+		$next_month_overview_anchor = self::get_month_overview_anchor( $this->month->modify( 'next month' ) );
+		$year_overview_anchor = self::get_year_overview_anchor();
+?>
+		<a href="#<?php echo $previous_month_overview_anchor; ?>" class="calendar__previous-month">&nbsp;&lt;&nbsp;</a>
+		<a href="#<?php echo $month_overview_anchor; ?>"><?php echo strftime( '%b', $this->month->getTimestamp() ); ?></a>
+		<a href="#<?php echo $year_overview_anchor; ?>"><?php echo strftime( '%Y', $this->month->getTimestamp() ); ?></a>
+		<a href="#<?php echo $next_month_overview_anchor; ?>" class="calendar__next-month">&nbsp;&gt;&nbsp;</a>
 <?php
 	}
 }
