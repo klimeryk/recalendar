@@ -43,7 +43,7 @@ class ReCalendar {
 		$period = new \DatePeriod( $start, $interval, $end );
 
 		foreach( $period as $week ) {
-			$this->generate_week( $week );
+			$this->generate_week( $week, $end );
 
 			$this->write_html();
 		}
@@ -56,10 +56,10 @@ class ReCalendar {
 		$this->append_html( $title_page_generator->generate() );
 	}
 
-	private function generate_week( \DateTimeImmutable $week ) : void {
+	private function generate_week( \DateTimeImmutable $week, \DateTimeImmutable $year_end ) : void {
 		$this->generate_week_overview( $week );
 
-		$this->generate_days_per_week( $week );
+		$this->generate_days_per_week( $week, $year_end );
 
 		$this->generate_week_retrospective( $week );
 	}
@@ -86,12 +86,11 @@ class ReCalendar {
 		$this->append_html( $week_overview_generator->generate() );
 	}
 
-	private function generate_days_per_week( \DateTimeImmutable $week ) : void {
-		$year = $this->config->get( Config::YEAR );
+	private function generate_days_per_week( \DateTimeImmutable $week, \DateTimeImmutable $year_end ) : void {
 		$next_week = $week->modify( 'next week' );
 		$week_period = new \DatePeriod( $week, new \DateInterval( 'P1D' ), $next_week );
 		foreach( $week_period as $week_day ) {
-			if ( (int) $week_day->format( 'j' ) === 1 && (int) $week_day->format( 'Y' ) === $year ) {
+			if ( (int) $week_day->format( 'j' ) === 1 && $week_day < $year_end ) {
 				$this->generate_month_overview( $week_day );
 			}
 

@@ -46,7 +46,7 @@ abstract class Generator {
 	}
 
 	protected static function get_month_overview_anchor( \DateTimeImmutable $date ) : string {
-		return $date->format( 'F' ) . '-overview';
+		return $date->format( 'dmY' ) . '-month-overview';
 	}
 
 	protected static function get_week_overview_anchor( \DateTimeImmutable $date ) : string {
