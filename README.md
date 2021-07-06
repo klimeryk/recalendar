@@ -24,7 +24,7 @@ https://user-images.githubusercontent.com/3392497/124393405-e86ed380-dce9-11eb-9
 
 Dependencies:
 
-- PHP
+- PHP >= 7.4 (with `mbstring` and `gd` extensions - [required by mPDF](https://mpdf.github.io/about-mpdf/requirements-v7.html))
 - [Composer](https://getcomposer.org/)
 
 On MacOS, you can quickly install them with [Homebrew](https://brew.sh/): `brew install php composer`.
