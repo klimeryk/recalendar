@@ -23,6 +23,7 @@ Don't want to/need to/can customize it? Check out the [ready-to-use blank versio
  - Add extra pages to all or selected days of the week to suit your needs.
  - Provide a list of special dates (anniversaries, birthdays, etc.) and let ReCalendar embed them into your personalized calendar - on monthly views, weekly overviews and finally, day entries.
  - Track your habits monthly.
+ - Start the "year" on arbitrary month (can be useful for tracking academic years, etc.).
 
 ## Quickstart
 
