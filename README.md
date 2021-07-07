@@ -73,7 +73,11 @@ class LocalConfig extends Config {
 
 See the [`config.php`](https://github.com/klimeryk/recalendar/blob/main/config.php) file for the full list of available options and their descriptions. You can modify the options there as well, but it's recommended to use the `local.config.php` instead as then you can easily update the source code in the future and retain your configuration changes.
 
-There's also an [example generated PDF](https://github.com/klimeryk/recalendar/raw/main/example/ReCalendar.pdf) you can check out quickly and the [`local.config.php`](https://github.com/klimeryk/recalendar/blob/main/example/local.config.php) that generated it as an inspiration.
+There's also an [example generated PDF](https://github.com/klimeryk/recalendar/raw/main/example/ReCalendar.pdf) you can check out quickly and the [`local.config.php`](https://github.com/klimeryk/recalendar/blob/main/example/local.config.php) that generated it as an inspiration:
+
+```
+cp example/local.config.php .
+```
 
 ## Advanced configuration example
 
