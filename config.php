@@ -13,6 +13,7 @@ class Config {
 	public const HABITS_TITLE = 'habits_title';
 	public const LOCALE = 'locale';
 	public const MONTH = 'month';
+	public const MONTH_COUNT = 'month_count';
 	public const MONTHS = 'months';
 	public const WEEK_NAME = 'week_name';
 	public const WEEK_NUMBER = 'week_number';
@@ -76,6 +77,9 @@ class Config {
 			// You could then set this to 10 (October) and the calendar
 			// would then be generated for 12 months starting from October.
 			self::MONTH => 1,
+			// The number of months you want this calendar to be for.
+			// Useful if you want a calendar for the quarter (3) or a 15 month calendar.
+			self::MONTH_COUNT => 12,
 			// Title of the Week overview page
 			self::WEEK_NAME => 'Week',
 			// A short version of "Week Number" used in the header of the small calendar in upper right corner of the page

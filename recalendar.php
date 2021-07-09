@@ -32,8 +32,8 @@ class ReCalendar {
 		$month = sprintf( '%02d', (int) $this->config->get( Config::MONTH ) );
 		$year = (int) $this->config->get( Config::YEAR );
 		$start = new \DateTimeImmutable( "$year-$month-01" );
-		$next_year = $year + 1;
-		$end = new \DateTimeImmutable( "$next_year-$month-01" );
+		$month_count = (int) $this->config->get( Config::MONTH_COUNT );
+		$end = $start->modify( "$month_count months" );
 		$year_overview_generator = new YearOverviewGenerator( $start, $end, $this->config );
 		$this->add_page();
 		$this->append_html( $year_overview_generator->generate() );
