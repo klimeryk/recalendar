@@ -18,10 +18,11 @@ class TitlePageGenerator extends Generator {
 
 	protected function generate_content() : void {
 		$year = (int) $this->config->get( Config::YEAR );
+		$subtitle = $this->config->get( Config::SUBTITLE );
 ?>
 		<div class="title-page">
 			<div class="title-page__year"><?php echo $year; ?></div>
-			<div class="title-page__recalendar">ReCalendar</div>
+			<div class="title-page__recalendar"><?php echo $subtitle ?></div>
 		</div>
 <?php
 	}

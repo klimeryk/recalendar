@@ -22,6 +22,7 @@ class Config {
 	public const WEEKLY_TODOS = 'weekly_todos';
 	public const SPECIAL_DATES = 'special_dates';
 	public const YEAR = 'year';
+	public const SUBTITLE = 'subtitle';
 
 	public function get( string $key ) {
 		return $this->get_configuration()[ $key ] ?? null;
@@ -101,6 +102,7 @@ class Config {
 			// The year for which to generate this calendar.
 			// Defaults to the current year.
 			self::YEAR => (int) date( 'Y' ),
+			self::SUBTITLE => 'ReCalendar'
 		];
 
 		// Get the names of the months in the set locale.
