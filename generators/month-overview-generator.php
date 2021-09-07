@@ -9,12 +9,11 @@ require_once __DIR__ . '/calendar-generator.php';
 class MonthOverviewGenerator extends Generator {
 	private $month;
 	private $calendar_generator;
-	private $config;
 
 	public function __construct( \DateTimeImmutable $date, CalendarGenerator $calendar_generator, Config $config ) {
+		parent::__construct( $config );
 		$this->month = $date->modify( 'first day of this month' );
 		$this->calendar_generator = $calendar_generator;
-		$this->config = $config;
 	}
 
 	protected function generate_anchor_string() : ?string {

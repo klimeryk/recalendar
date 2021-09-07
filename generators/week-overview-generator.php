@@ -10,13 +10,12 @@ class WeekOverviewGenerator extends Generator {
 	private $week;
 	private $week_number;
 	private $calendar_generator;
-	private $config;
 
 	public function __construct( \DateTimeImmutable $week, CalendarGenerator $calendar_generator, Config $config ) {
+		parent::__construct( $config );
 		$this->week = $week;
 		$this->week_number = self::get_week_number( $week );
 		$this->calendar_generator = $calendar_generator;
-		$this->config = $config;
 	}
 
 	protected function generate_anchor_string() : ?string {

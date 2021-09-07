@@ -9,12 +9,11 @@ require_once __DIR__ . '/calendar-generator.php';
 class YearOverviewGenerator extends Generator {
 	private $year_start;
 	private $year_end;
-	private $config;
 
 	public function __construct( \DateTimeImmutable $year_start, \DateTimeImmutable $year_end, Config $config ) {
+		parent::__construct( $config );
 		$this->year_start = $year_start;
 		$this->year_end = $year_end;
-		$this->config = $config;
 	}
 
 	protected function generate_anchor_string() : ?string {

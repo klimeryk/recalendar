@@ -12,14 +12,13 @@ class CalendarGenerator extends Generator {
 
 	private $month;
 	private $date;
-	private $config;
 	private $display_full_month_name;
 
 	public function __construct( \DateTimeImmutable $date, string $highlight_mode, Config $config, bool $display_full_month_name = false ) {
+		parent::__construct( $config );
 		$this->month = $date->modify( 'first day of this month' );
 		$this->date = $date;
 		$this->highlight_mode = $highlight_mode;
-		$this->config = $config;
 		$this->display_full_month_name = $display_full_month_name;
 	}
 

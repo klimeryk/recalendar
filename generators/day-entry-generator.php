@@ -9,12 +9,11 @@ require_once __DIR__ . '/calendar-generator.php';
 class DayEntryGenerator extends Generator {
 	private $day;
 	private $calendar_generator;
-	private $config;
 
 	public function __construct( \DateTimeImmutable $day, CalendarGenerator $calendar_generator, Config $config ) {
+		parent::__construct( $config );
 		$this->day = $day;
 		$this->calendar_generator = $calendar_generator;
-		$this->config = $config;
 	}
 
 	protected function generate_anchor_string() : ?string {

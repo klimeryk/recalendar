@@ -4,6 +4,12 @@ declare(strict_types=1);
 namespace ReCalendar;
 
 abstract class Generator {
+	protected $config;
+
+	public function __construct( Config $config ) {
+		$this->config = $config;
+	}
+
 	public function generate() : string {
 		ob_start();
 		$this->generate_anchor();
