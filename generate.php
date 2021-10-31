@@ -3,7 +3,18 @@
 declare(strict_types=1);
 
 require_once __DIR__ . '/config.php';
-if ( file_exists( __DIR__ . '/local.config.php' ) ) {
+
+if ( $argc > 1 && $argv[1] === '-c' ) {
+	if ( empty( $argv[2] ) ) {
+		exit( 'Please provide a path to the configuration file.' );
+	}
+
+	if ( ! file_exists( $argv[2] ) ) {
+		exit( 'The provided configuration file does not exist: ' . $argv[2] );
+	}
+
+	require_once $argv[2];
+} elseif ( file_exists( __DIR__ . '/local.config.php' ) ) {
 	require_once __DIR__ . '/local.config.php';
 }
 
