@@ -8,6 +8,9 @@ class Config {
 	public const DAY_ITINERARY_COMMON = 'day_itinerary_common';
 	public const DAY_ITINERARY_WEEK_RETRO = 'day_itinerary_week_retro';
 	public const DAY_ITINERARY_MONTH_OVERVIEW = 'day_itinerary_month_overview';
+	public const FONT_DATA = 'font_array';
+	public const FONT_DEFAULT = 'default_font';
+	public const FONT_DIR = 'font_directory';
 	public const FORMAT = 'format';
 	public const HABITS = 'habits';
 	public const HABITS_TITLE = 'habits_title';
@@ -65,6 +68,19 @@ class Config {
 			],
 			// Title for the habits table on month overview
 			self::HABITS_TITLE => 'Habits',
+			// Font information array.
+			self::FONT_DATA => [
+				'lato' => [
+					'R' => 'Lato-Regular.ttf',
+					'I' => 'Lato-Italic.ttf',
+					'B' => 'Lato-Bold.ttf',
+					'BI' => 'Lato-BoldItalic.ttf',
+				],
+			],
+			// The font to use. Match the name used in FONT_DATA.
+			self::FONT_DEFAULT => 'lato',
+			// Directory the font is located in.
+			self::FONT_DIR => '/fonts/Lato',
 			// This is the exact size (in mm) of the ReMarkable 2 screen
 			// You might want to adjust it to your device's size
 			// See https://mpdf.github.io/reference/mpdf-functions/construct.html for possible values
