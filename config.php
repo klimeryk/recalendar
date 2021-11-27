@@ -71,16 +71,16 @@ class Config {
 			// Font information array.
 			self::FONT_DATA => [
 				'lato' => [
-					'R' => 'Lato-Regular.ttf',
-					'I' => 'Lato-Italic.ttf',
-					'B' => 'Lato-Bold.ttf',
-					'BI' => 'Lato-BoldItalic.ttf',
+					'R' => 'Lato/Lato-Regular.ttf',
+					'I' => 'Lato/Lato-Italic.ttf',
+					'B' => 'Lato/Lato-Bold.ttf',
+					'BI' => 'Lato/Lato-BoldItalic.ttf',
 				],
 			],
 			// The font to use. Match the name used in FONT_DATA.
 			self::FONT_DEFAULT => 'lato',
 			// Directory the font is located in.
-			self::FONT_DIR => '/fonts/Lato',
+			self::FONT_DIR => '/fonts/',
 			// This is the exact size (in mm) of the ReMarkable 2 screen
 			// You might want to adjust it to your device's size
 			// See https://mpdf.github.io/reference/mpdf-functions/construct.html for possible values
