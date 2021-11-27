@@ -45,19 +45,12 @@ $fontData = $defaultFontConfig['fontdata'];
 
 $mpdf = new \Mpdf\Mpdf( [
     'fontDir' => array_merge( $fontDirs, [
-        __DIR__ . '/fonts/Lato',
+        __DIR__ . $config->get( \ReCalendar\Config::FONT_DIR ),
     ] ),
-    'fontdata' => $fontData + [
-        'lato' => [
-            'R' => 'Lato-Regular.ttf',
-            'I' => 'Lato-Italic.ttf',
-            'B' => 'Lato-Bold.ttf',
-            'BI' => 'Lato-BoldItalic.ttf',
-        ],
-    ],
+    'fontdata' => $fontData + $config->get( \ReCalendar\Config::FONT_DATA ),
 	'mode' => 'utf-8',
 	'format' => $config->get( \ReCalendar\Config::FORMAT ),
-	'default_font' => 'lato',
+	'default_font' => $config->get( \ReCalendar\Config::FONT_DEFAULT ),
 	'margin_left' => 0,
 	'margin_right' => 0,
 	'margin_top' => 0,
@@ -65,6 +58,7 @@ $mpdf = new \Mpdf\Mpdf( [
 	'margin_header' => 0,
 	'margin_footer' => 0,
 ] );
+
 $mpdf->useSubstitutions = false;
 
 $recalendar = new \ReCalendar\ReCalendar( $mpdf, $config );
