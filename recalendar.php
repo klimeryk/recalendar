@@ -25,7 +25,11 @@ class ReCalendar {
 	}
 
 	public function generate() {
-		$stylesheet = file_get_contents( 'style.css' );
+		$stylesheet_filename = $this->config->get( Config::STYLE_SHEET );
+		if ( ! file_exists( $stylesheet_filename ) ) {
+			exit( 'The provided stylesheet does not exist: ' . $stylesheet_filename . PHP_EOL );
+		}
+		$stylesheet = file_get_contents( $stylesheet_filename );
 		$this->mpdf->WriteHTML( $stylesheet, \Mpdf\HTMLParserMode::HEADER_CSS );
 		$this->generate_title_page();
 

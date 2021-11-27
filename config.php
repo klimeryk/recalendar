@@ -21,6 +21,7 @@ class Config {
 	public const WEEKLY_RETROSPECTIVE_TITLE = 'weekly_retrospective_title';
 	public const WEEKLY_TODOS = 'weekly_todos';
 	public const SPECIAL_DATES = 'special_dates';
+	public const STYLE_SHEET = 'style_sheet_filename';
 	public const SUBTITLE = 'subtitle';
 	public const YEAR = 'year';
 
@@ -99,6 +100,8 @@ class Config {
 				// '01-01' => "New Year!",
 				// '01-04' => "April Fools' Day",
 			],
+			// Stylesheet filename
+			self::STYLE_SHEET => 'style.css',
 			// Used on the title page of the calendar
 			self::SUBTITLE => 'ReCalendar',
 			// The year for which to generate this calendar.
