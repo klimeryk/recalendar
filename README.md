@@ -25,7 +25,19 @@ Don't want to/need to/can customize it? Check out the [ready-to-use blank versio
  - Track your habits monthly.
  - Start the "year" on arbitrary month (can be useful for tracking academic years, etc.).
 
-## Quickstart
+## Quickstart with Docker
+
+Put your custom `local.config.php` (if needed) in the root directory, and run:
+
+```
+  docker build --file Dockerfile . --output .
+```
+
+First run will be slow because will compile & install and `composer`, but next calls will be faster.
+
+You'll get the result in a `ReCalendar.pdf` file in the same directory.
+
+## Quickstart without Docker
 
 Dependencies:
 
