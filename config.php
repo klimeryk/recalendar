@@ -18,7 +18,8 @@ class Config {
 	public const WEEK_NAME = 'week_name';
 	public const WEEK_NUMBER = 'week_number';
 	public const WEEKLY_RETROSPECTIVE_BOOKMARK = 'weekly_retrospective_bookmark';
-	public const WEEKLY_RETROSPECTIVE_TITLE = 'weekly_retrospective_title';
+	public const WEEKLY_RETROSPECTIVE_TITLE_01 = 'weekly_retrospective_title_01';
+	public const WEEKLY_RETROSPECTIVE_TITLE_02 = 'weekly_retrospective_title_02';
 	public const WEEKLY_TODOS = 'weekly_todos';
 	public const SPECIAL_DATES = 'special_dates';
 	public const SUBTITLE = 'subtitle';
@@ -88,7 +89,8 @@ class Config {
 			// Used for the bookmark of the weekly retrospective pages
 			self::WEEKLY_RETROSPECTIVE_BOOKMARK => 'Retrospective',
 			// Used for the title of the weekly retrospective pages
-			self::WEEKLY_RETROSPECTIVE_TITLE => 'Weekly retrospective',
+			self::WEEKLY_RETROSPECTIVE_TITLE_01 => 'Weekly',
+			self::WEEKLY_RETROSPECTIVE_TITLE_02 => 'Retrospec.',
 			// A list of items you'd like to be listed in the notes of the weekly overview
 			self::WEEKLY_TODOS => [
 			],

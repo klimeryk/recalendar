@@ -30,18 +30,23 @@ class WeekOverviewGenerator extends Generator {
 		$previous_week_anchor = self::get_week_overview_anchor( $this->week->modify( 'previous week' ) );
 		$next_week_anchor = self::get_week_overview_anchor( $this->week->modify( 'next week' ) );
 ?>
-		<table width="100%">
-			<tr>
-				<td class="week-overview__week-name"><?php echo $this->config->get( Config::WEEK_NAME ); ?></td>
-				<td class="week-overview__previous-week"><a href="#<?php echo $previous_week_anchor; ?>">«</a></td>
-				<td class="week-overview__day-number"><?php echo $this->week_number; ?></td>
-				<td class="week-overview__next-week"><a href="#<?php echo $next_week_anchor; ?>">»</a></td>
-				<td rowspan="2" class="calendar-box"><?php echo $calendar_html ?></td>
-			</tr>
-			<tr>
-				<td colspan="4" class="header-line week-overview__range"><?php echo $week_start; ?> - <?php echo $week_end; ?></td>
-			</tr>
-		</table>
+		<div style="border-bottom: 1px solid black;">
+			<table width="100%">
+				<tr>
+					<td rowspan="3" class="calendar-box"><?php echo $calendar_html ?></td>
+					<td rowspan="2" class="week-overview__previous-week"><a href="#<?php echo $previous_week_anchor; ?>">«</a></td>
+					<td rowspan="2" class="week-overview__day-number"><?php echo $this->week_number; ?></td>
+					<td rowspan="2" class="week-overview__next-week"><a href="#<?php echo $next_week_anchor; ?>">»</a></td>
+					<td class="header-line week-overview__week-name"></td>
+				</tr>
+				<tr>
+					<td class="week-overview__week-name"><?php echo $this->config->get( Config::WEEK_NAME ); ?></td>
+				</tr>
+				<tr>
+					<td colspan="4" class="header-line week-overview__range">» <?php echo $week_start; ?> - <?php echo $week_end; ?></td>
+				</tr>
+			</table>
+		</div>
 		<table class="content-box" height="100%">
 <?php
 		$month_start_week_number = self::get_week_number( $this->week->modify( 'first day of this month' )->modify( 'monday this week' ) );
@@ -57,20 +62,22 @@ class WeekOverviewGenerator extends Generator {
 			<tr>
 				<?php $this->generate_day_entry( $week_days[0], $day_entry_height ); ?>
 				<?php $this->generate_day_entry( $week_days[1], $day_entry_height ); ?>
-				<?php $this->generate_day_entry( $week_days[2], $day_entry_height ); ?>
 			</tr>
 			<tr>
+				<?php $this->generate_day_entry( $week_days[2], $day_entry_height ); ?>
 				<?php $this->generate_day_entry( $week_days[3], $day_entry_height ); ?>
+			</tr>
+			<tr>
 				<?php $this->generate_day_entry( $week_days[4], $day_entry_height ); ?>
 				<?php $this->generate_day_entry( $week_days[5], $day_entry_height ); ?>
 			</tr>
 			<tr>
 				<?php $this->generate_day_entry( $week_days[6], $day_entry_height ); ?>
-				<td colspan="2" class="week-overview__notes">
+				<td class="week-overview__notes">
 <?php
 					$weekly_todos = $this->config->get( Config::WEEKLY_TODOS );
 					foreach ( $weekly_todos as $weekly_todo ) {
-						echo "<span>$weekly_todo</span><br />";
+						echo "<span>» $weekly_todo</span><br />";
 					}
 ?>
 				</td>
@@ -82,11 +89,14 @@ class WeekOverviewGenerator extends Generator {
 	private function generate_day_entry( \DateTimeImmutable $week_day, int $day_entry_height ) {
 		$special_items = self::get_matching_special_items( $week_day, $this->config->get( Config::SPECIAL_DATES ) );
 ?>
-	<td class="week-overview__day-entry" style="height: <?php echo $day_entry_height; ?>px;">
+		<td class="week-overview__day-entry">
 			<table width="100%">
 				<tr height="100%">
-					<td class="week-overview__day-of-week"><a href="#<?php echo self::get_day_entry_anchor( $week_day ); ?>"><?php echo strftime( '%A', $week_day->getTimestamp() ); ?></a></td>
-					<td class="week-overview__date"><a href="#<?php echo self::get_day_entry_anchor( $week_day ); ?>"><?php echo strftime( '%d %b', $week_day->getTimestamp() ); ?></a></td>
+					<td class="week-overview__day-of-week">
+						<a href="#<?php echo self::get_day_entry_anchor( $week_day ); ?>"><?php echo strftime( '%A', $week_day->getTimestamp() ); ?></a>
+						&nbsp; - &nbsp;
+						<a href="#<?php echo self::get_day_entry_anchor( $week_day ); ?>"><?php echo strftime( '%d %B', $week_day->getTimestamp() ); ?></a>
+					</td>
 				</tr>
 <?php
 				foreach ( $special_items as $special_item ) {

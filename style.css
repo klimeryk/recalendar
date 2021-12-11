@@ -74,10 +74,10 @@ a {
 }
 
 .calendar-box {
-	border-left: 1px solid black;
+	border-right: 1px solid black;
 	padding: 0px 10px 5px 10px;
 	width: 100px;
-	border-bottom: 1px solid black;
+	vertical-align: top;
 }
 
 .calendar__week-number {
@@ -116,13 +116,10 @@ td.calendar__week-number {
 }
 
 .header-line {
-	text-align: right;
-	text-transform: uppercase;
-	font-size: 20pt;
-	padding-right: 10px;
-}
-
-.header-type {
+	text-align: left;
+	text-transform: capitalize;
+	font-size: 15pt;
+	padding-left: 10px;
 }
 
 .year-overview__title {
@@ -136,9 +133,6 @@ td.calendar__week-number {
 	width: 100%;
 }
 
-.year-overview__row {
-}
-
 .year-overview__calendar {
 	vertical-align: top;
 	padding: 5px;
@@ -146,8 +140,9 @@ td.calendar__week-number {
 
 .month-overview__month-name {
 	text-transform: uppercase;
-	font-size: 35pt;
+	font-size: 50pt;
 	font-weight: bold;
+	height: 161px;
 }
 
 .month-overview__habit-header {
@@ -192,19 +187,14 @@ td.calendar__week-number {
 
 .day-entry__month-name,
 .week-overview__week-name,
-.week-retrospective__week-name {
-	text-align: right;
-	font-size: 18pt;
+.week-retrospective__week-name_02 {
+	text-align: left;
+	font-size: 23pt;
 	text-transform: uppercase;
-	padding-top: 35px;
-}
-
-.week-retrospective__week-name {
-	padding-top: 12px;
-}
-
-.week-overview__day-of-week {
-	color: #333;
+	padding-left: 10px;
+	vertical-align: top;
+	height: 43px;
+	font-weight: bold;
 }
 
 .day-entry__day-number,
@@ -216,20 +206,23 @@ td.calendar__week-number {
 	font-weight: bold;
 	padding: 0;
 	margin: 0;
+	vertical-align:middle;
 }
 
-.day-entry__special-items {
-	vertical-align: bottom;
+.day-entry__special-items,
+.week-overview__range,
+.week-retrospective__range {
+	vertical-align: top;
 	font-style: italic;
 	font-size: 10pt;
 	padding: 10px;
+	height: 75px;
 }
 
-.day-entry__special-item {
-}
-
-.day-entry__day-of-week {
+.day-entry__day-of-week,
+.week-retrospective__week-name_01 {
 	vertical-align: bottom;
+	height: 43px;
 }
 
 .day-entry__previous-day,
@@ -238,21 +231,12 @@ td.calendar__week-number {
 .week-overview__next-week,
 .week-retrospective__previous-week,
 .week-retrospective__next-week {
-	font-size: 20pt;
+	font-size: 30pt;
 	color: #AAA;
-	width: 22px;
-}
-
-.day-entry__previous-day,
-.week-overview__previous-week,
-.week-retrospective__previous-week {
-	padding-left: 10px;
-}
-
-.day-entry__next-day,
-.week-overview__next-week,
-.week-retrospective__next-week {
-	padding-right: 10px;
+	width: 50px;
+	vertical-align: middle;
+	text-align: center;
+	height: 100%;
 }
 
 .content-box {
@@ -270,27 +254,32 @@ td.calendar__week-number {
 }
 
 .week-overview__day-entry {
-	border: 1px dotted black;
-	width: 33%;
+	border-top: 1px dotted black;
+	border-right: 1px dotted black;
+	border-left: 1px dotted black;
+	width: 50%;
 	vertical-align: top;
 	padding: 5px;
+	height: 156px;
 }
 
 .week-overview__day-of-week {
-	width: 50%;
 	font-size: 12pt;
 	font-weight: bold;
 	text-transform: capitalize;
+	color: #333;
 }
 
 .week-overview__date {
-	text-align: right;
 	width: 50%;
 	text-transform: uppercase;
 	font-size: 12pt;
 }
 
 .week-overview__notes {
+	border-top: 1px dotted black;
+	border-right: 1px dotted black;
+	border-left: 1px dotted black;
 	vertical-align: top;
 	font-style: italic;
 	font-size: 10pt;
@@ -299,11 +288,4 @@ td.calendar__week-number {
 
 .week-overview__special-item {
 	font-size: 10pt;
-}
-
-.week-overview__range,
-.week-retrospective__range {
-	text-transform: uppercase;
-	font-size: 18pt;
-	border-bottom: 1px solid black;
 }

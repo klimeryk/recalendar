@@ -24,12 +24,14 @@ class MonthOverviewGenerator extends Generator {
 		$month_name = self::get_localized_month_name( $this->month, $this->config->get( Config::MONTHS ) );
 		$calendar_html = $this->calendar_generator->generate();
 ?>
-		<table width="100%">
-			<tr>
-				<td style="border-bottom: 1px solid black;" class="header-line month-overview__month-name"><?php echo $month_name; ?></td>
-				<td class="calendar-box"><?php echo $calendar_html ?></td>
-			</tr>
-		</table>
+		<div style="border-bottom: 1px solid black;">
+			<table width="100%">
+				<tr>
+					<td class="calendar-box"><?php echo $calendar_html ?></td>
+					<td class="header-line month-overview__month-name"><?php echo $month_name; ?></td>
+				</tr>
+			</table>
+		</div>
 <?php
 		$habits = $this->config->get( Config::HABITS );
 		if ( ! empty( $habits ) ) {
