@@ -33,7 +33,7 @@ Put your custom `local.config.php` (if needed) in the root directory, and run:
   docker build --file Dockerfile . --output .
 ```
 
-First run will be slow because will compile & install and `composer`, but next calls will be faster.
+First run will be slow because it must compile & install `composer`, but next calls will be faster.
 
 You'll get the result in a `ReCalendar.pdf` file in the same directory.
 
