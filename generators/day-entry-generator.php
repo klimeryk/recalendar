@@ -29,36 +29,32 @@ class DayEntryGenerator extends Generator {
 		$previous_day_anchor = self::get_day_entry_anchor( $this->day->modify( 'yesterday' ) );
 		$next_day_anchor = self::get_day_entry_anchor( $this->day->modify( 'tomorrow' ) );
 ?>
-		<table width="100%">
-			<tr>
-				<td class="day-entry__month-name"><a href="#<?php echo $month_overview_anchor; ?>"><?php echo $month_name; ?></a></td>
-				<td class="day-entry__previous-day"><a href="#<?php echo $previous_day_anchor; ?>">«</a></td>
-				<td class="day-entry__day-number"><?php echo $day_number; ?></td>
-				<td class="day-entry__next-day"><a href="#<?php echo $next_day_anchor; ?>">»</a></td>
-				<td rowspan="2" class="calendar-box"><?php echo $calendar_html ?></td>
-			</tr>
-			<tr>
-				<td colspan="4" style="border-bottom: 1px solid black; padding: 0; margin: 0;">
-					<table width="100%">
-						<tbody>
-							<tr>
-								<td class="day-entry__special-items">
+		<div style="border-bottom: 1px solid black;">
+			<table width="100%">
+				<tr>
+					<td rowspan="3" class="calendar-box"><?php echo $calendar_html ?></td>
+					<td rowspan="2" class="day-entry__previous-day"><a href="#<?php echo $previous_day_anchor; ?>">«</a></td>
+					<td rowspan="2" class="day-entry__day-number"><?php echo $day_number; ?></td>
+					<td rowspan="2" class="day-entry__next-day"><a href="#<?php echo $next_day_anchor; ?>">»</a></td>
+					<td class="header-line day-entry__day-of-week"><?php echo strftime( '%A', $this->day->getTimestamp() ); ?></td>
+				</tr>
+				<tr>
+					<td class="day-entry__month-name"><a href="#<?php echo $month_overview_anchor; ?>"><?php echo $month_name; ?></a></td>
+				</tr>
+				<tr>
+					<td colspan="4" class="day-entry__special-items">
 <?php
-									foreach ( $special_items as $index => $special_item ) {
-										echo "<span class=\"day-entry__special-item\">» $special_item</span>";
-										if ( $index < ( count( $special_items ) - 1 ) ) {
-											echo '<br />';
-										}
-									}
+					foreach ( $special_items as $index => $special_item ) {
+						echo "<span class=\"day-entry__special-item\">» $special_item</span>";
+						if ( $index < ( count( $special_items ) - 1 ) ) {
+							echo '<br />';
+						}
+					}
 ?>
-								</td>
-								<td class="header-line day-entry__day-of-week"><?php echo strftime( '%A', $this->day->getTimestamp() ); ?></td>
-							</tr>
-						</tbody>
-					</table>
-				</td>
-			</tr>
-		</table>
+					</td>
+				</tr>
+			</table>
+		</div>
 <?php
 		$all_itinerary_items = $this->config->get( Config::DAY_ITINERARY_ITEMS );
 		$itinerary_items = $all_itinerary_items[ (int) $this->day->format( 'N' ) ] ?? $all_itinerary_items[ Config::DAY_ITINERARY_COMMON ];
