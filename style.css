@@ -1,0 +1,291 @@
+table {
+	border-collapse: collapse;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+.title-page {
+	width: 100%;
+	text-align: right;
+	padding-right: 100px;
+	padding-top: 400px;
+	line-height: 30px;
+}
+
+.title-page__year {
+	font-weight: bold;
+	font-size: 90pt;
+}
+
+.title-page__recalendar {
+	font-size: 25pt;
+	color: #999;
+}
+
+.ui-datepicker-header {
+	text-align: center;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	color: #888;
+}
+
+.ui-datepicker-calendar {
+	font-size: 10pt;
+	width: 100%;
+	text-align: center;
+}
+
+.calendar-week.highlight-week {
+	background-color: #CCC;
+}
+
+.calendar-day {
+	color: black;
+	text-decoration: none;
+	display: block;
+	margin: 0 auto;
+	width: 15px;
+	height: 15px;
+	line-height: 15px;
+	border: none;
+}
+
+.calendar-day.first-week {
+	border-top: 1px solid black;
+}
+
+.calendar-day.weekend-day {
+	font-weight: bold;
+}
+
+.calendar-day.highlight-day {
+	background-color: #CCC;
+}
+
+.calendar-day.special-date {
+	border: 1px solid #555;
+}
+
+.calendar-day.other-month {
+	color: #999;
+}
+
+.calendar-box {
+	border-right: 1px solid black;
+	padding: 0px 10px 5px 10px;
+	width: 100px;
+	vertical-align: top;
+}
+
+.calendar__week-number {
+	border-right: 1px solid black;
+}
+
+th.calendar__week-number,
+th.calendar__week-retrospective {
+	border-bottom: 1px solid black;
+}
+
+td.calendar__week-number,
+td.calendar__week-retrospective {
+	color: #888;
+}
+
+.calendar__week-retrospective {
+	border-left: 1px solid black;
+}
+
+td.calendar__week-number {
+	color: #888;
+}
+
+.calendar__previous-month,
+.calendar__next-month {
+	color: #AAA;
+	font-size: 18px;
+	font-weight: bold;
+}
+
+.calendar__full-month-name {
+	color: black;
+	letter-spacing: 1px;
+	font-size: 12pt;
+}
+
+.header-line {
+	text-align: left;
+	text-transform: capitalize;
+	font-size: 15pt;
+	padding-left: 10px;
+}
+
+.year-overview__title {
+	text-align: center;
+	font-size: 60pt;
+	padding-top: 30px;
+	margin-bottom: 20px;
+}
+
+.year-overview__calendars {
+	width: 100%;
+}
+
+.year-overview__calendar {
+	vertical-align: top;
+	padding: 5px;
+}
+
+.month-overview__month-name {
+	text-transform: uppercase;
+	font-size: 50pt;
+	font-weight: bold;
+	height: 161px;
+}
+
+.month-overview__habit-header {
+	width: 22px;
+	border-bottom: 1px solid #999;
+	border-right: 1px solid #999;
+	border-left: 1px solid #999;
+}
+
+.month-overview__habit-header.name {
+	text-transform: capitalize;
+	font-weight: normal;
+	font-size: 7pt;
+}
+
+.month-overview__habit-header.disabled {
+	background: white;
+	border: 1px solid white;
+}
+
+.month-overview__habit-header.weekend,
+.month-overview__habit-box.weekend {
+	background: #EEE;
+}
+
+.month-overview__habit-name {
+	border-top: 1px solid #999;
+	border-bottom: 1px solid #999;
+	font-weight: bold;
+	width: 100px;
+	height: 20px;
+}
+
+.month-overview__habit-box {
+	border: 1px solid #999;
+}
+
+.month-overview__habit-box.disabled {
+	background: white;
+	border: 1px solid white;
+}
+
+.day-entry__month-name,
+.week-overview__week-name,
+.week-retrospective__week-name_02 {
+	text-align: left;
+	font-size: 23pt;
+	text-transform: uppercase;
+	padding-left: 10px;
+	vertical-align: top;
+	height: 43px;
+	font-weight: bold;
+}
+
+.day-entry__day-number,
+.week-overview__day-number,
+.week-retrospective__day-number {
+	width: 90px;
+	text-align: center;
+	font-size: 50pt;
+	font-weight: bold;
+	padding: 0;
+	margin: 0;
+	vertical-align:middle;
+}
+
+.day-entry__special-items,
+.week-overview__range,
+.week-retrospective__range {
+	vertical-align: top;
+	font-style: italic;
+	font-size: 10pt;
+	padding: 10px;
+	height: 75px;
+}
+
+.day-entry__day-of-week,
+.week-retrospective__week-name_01 {
+	vertical-align: bottom;
+	height: 43px;
+}
+
+.day-entry__previous-day,
+.day-entry__next-day,
+.week-overview__previous-week,
+.week-overview__next-week,
+.week-retrospective__previous-week,
+.week-retrospective__next-week {
+	font-size: 30pt;
+	color: #AAA;
+	width: 50px;
+	vertical-align: middle;
+	text-align: center;
+	height: 100%;
+}
+
+.content-box {
+	width: 100%;
+}
+
+.content-box-line {
+	width: 100%;
+	border-bottom: 1px solid #AAA;
+	height: 20pt;
+	padding: 0 0 0 10px;
+	font-size: 12pt;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+.week-overview__day-entry {
+	border-top: 1px dotted black;
+	border-right: 1px dotted black;
+	border-left: 1px dotted black;
+	width: 50%;
+	vertical-align: top;
+	padding: 5px;
+	height: 156px;
+}
+
+.week-overview__day-of-week {
+	font-size: 12pt;
+	font-weight: bold;
+	text-transform: capitalize;
+	color: #333;
+}
+
+.week-overview__date {
+	width: 50%;
+	text-transform: uppercase;
+	font-size: 12pt;
+}
+
+.week-overview__notes {
+	border-top: 1px dotted black;
+	border-right: 1px dotted black;
+	border-left: 1px dotted black;
+	vertical-align: top;
+	font-style: italic;
+	font-size: 10pt;
+	padding: 10px;
+}
+
+.week-overview__special-item {
+	font-size: 10pt;
+}
