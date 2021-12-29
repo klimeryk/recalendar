@@ -1,4 +1,11 @@
 # ReCalendar
+
+## New version -> recalendar.me
+
+Please check out https://recalendar.me/, an online, easy to use version of ReCalendar. It's also on GitHub! https://github.com/klimeryk/recalendar.js/
+It's a completly separate project, rewritten by scratch, but with the same principles and overal design.
+I'll be most likely deprecating this repository as the new version is much easier to work on _and_ it's easier to use for end-users as well. Some requested features will be much easier to implement there as well.
+
 ### Highly customizable calendar for ReMarkable tablets
 
 ReCalendar allows you to generate your own, personalized calendar using PHP and the [mPDF library](https://mpdf.github.io/).
