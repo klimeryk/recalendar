@@ -1,10 +1,12 @@
 # ReCalendar
 
-## New version -> recalendar.me
-
-Please check out https://recalendar.me/, an online, easy to use version of ReCalendar. It's also on GitHub! https://github.com/klimeryk/recalendar.js/
-It's a completly separate project, rewritten by scratch, but with the same principles and overal design.
-I'll be most likely deprecating this repository as the new version is much easier to work on _and_ it's easier to use for end-users as well. Some requested features will be much easier to implement there as well.
+> [!WARNING]
+> ## New version -> https://recalendar.me/ / https://github.com/klimeryk/recalendar.js/
+> Please check out https://recalendar.me/, an online, easy to use version of ReCalendar. It's also on GitHub, fully open-source: https://github.com/klimeryk/recalendar.js/
+> It's a completly separate project, rewritten by scratch, but with the same principles and overal design.
+> The new version has fully overtook this one in terms of features, usability and popularity, so I'm archiving it as of December 21, 2025 🙇🎄👋
+> 
+> No changes will be made to this repository - I'm marking it as archived. If you have an active fork of it, that's great and I'd love to hear about it! 💖 (happy to add a note here to direct people to it)
 
 ### Highly customizable calendar for ReMarkable tablets
 
